@@ -1,0 +1,24 @@
+SequenceStudio Commercial License
+
+Copyright (c) 2026 GOENOMICS. All rights reserved.
+
+This file defines the commercial licensing path for SequenceStudio under the
+project's dual-license model:
+
+1) Open-source path:
+   - GNU Lesser General Public License v2.1 or later (see LICENSE)
+
+2) Commercial path:
+   - A separate commercial agreement must be executed with GOENOMICS
+   - Intended for users who need rights beyond LGPL-2.1-or-later terms,
+     including closed-source redistribution and/or proprietary integration
+
+No commercial rights are granted by this file itself.
+Commercial rights are granted only by a signed agreement.
+
+For commercial licensing inquiries:
+- Website: https://goenomics.com
+- Contact: legal@goenomics.com
+
+Version: 1.0
+Effective date: 2026-06-29

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sequencestudio"
+version = "1.0.0"
+description = "A modern macOS biological sequence analysis workbench"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "LGPL-2.1-or-later" }
+classifiers = [
+    "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+]
+dependencies = [
+    "biopython>=1.81",
+    "PySide6>=6.6.0",
+    "matplotlib>=3.8.0",
+    "numpy>=1.26.0",
+]
+
+[project.scripts]
+sequencestudio = "main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sequencestudio*"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "LICENSE-COMMERCIAL"]
