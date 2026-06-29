@@ -26,6 +26,7 @@ from sequencestudio.views.orf_finder import OrfFinderView
 from sequencestudio.views.primer_design import PrimerDesignDialog
 from sequencestudio.views.dot_plot import DotPlotView
 from sequencestudio.views.tree_view import TreeView
+from sequencestudio.views.gene_prediction_view import GenePredictionView
 
 
 # ---------------------------------------------------------------------------
@@ -270,6 +271,11 @@ class MainWindow(QMainWindow):
         self._a_orf.triggered.connect(self._open_orf)
         anlm.addAction(self._a_orf)
 
+        self._a_gene = QAction("&Gene Prediction…", self)
+        self._a_gene.setToolTip("Predict coding genes from the active sequence")
+        self._a_gene.triggered.connect(self._open_gene_prediction)
+        anlm.addAction(self._a_gene)
+
         self._a_primer = QAction("&Primer Design…", self)
         self._a_primer.triggered.connect(self._open_primer)
         anlm.addAction(self._a_primer)
@@ -326,7 +332,7 @@ class MainWindow(QMainWindow):
         tb.addSeparator()
 
         for a in (
-            self._a_blast, self._a_re, self._a_orf, self._a_primer, None,
+            self._a_blast, self._a_re, self._a_orf, self._a_gene, self._a_primer, None,
             self._a_dot, self._a_tree,
         ):
             if a is None:
@@ -521,6 +527,11 @@ class MainWindow(QMainWindow):
         rec = self._require_record("ORF Finder")
         if rec:
             self._add_tab(OrfFinderView(rec), f"ORFs: {rec.id}")
+
+    def _open_gene_prediction(self) -> None:
+        rec = self._require_record("Gene Prediction")
+        if rec:
+            self._add_tab(GenePredictionView(rec), f"Genes: {rec.id}")
 
     def _open_primer(self) -> None:
         rec = self._require_record("Primer Design")

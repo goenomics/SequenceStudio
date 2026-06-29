@@ -9,10 +9,11 @@ A modern, cross-platform biological sequence analysis workbench built with Pytho
 ## Features
 
 - **Sequence Editor** — Open FASTA, GenBank, Clustal, NEXUS, PHYLIP files
-- **Multiple Sequence Alignment** — ClustalOmega or MUSCLE via subprocess, full colored MSA viewer
+- **Multiple Sequence Alignment** — MAFFT or MUSCLE via subprocess, full colored MSA viewer
 - **BLAST Search** — Remote NCBI BLAST (blastn, blastp, blastx, tblastn, tblastx)
 - **Restriction Enzyme Map** — Visual linear/circular restriction maps
 - **ORF Finder** — All 6 reading frames, configurable minimum length
+- **Gene Prediction** — Auto backend selection: pyrodigal (if installed) with ORF fallback, GFF3 import/export, transcript/protein FASTA export, feature filters, parent/child links, and multi-track visualization for gene/mRNA/exon/CDS features
 - **Primer Design** — Tm calculation, GC%, hairpin check, nearest-neighbor thermodynamics
 - **Dot Plot** — Pairwise sequence comparison
 - **Phylogenetic Tree** — Neighbor-joining tree from an alignment
@@ -36,6 +37,15 @@ pip install -r requirements.txt
 ```bash
 brew install mafft muscle
 ```
+
+### Optional: gene prediction backend
+
+```bash
+pip install pyrodigal
+```
+
+Without pyrodigal, SequenceStudio automatically falls back to a built-in ORF-based predictor.
+The Gene Prediction view also includes a future-facing eukaryotic backend slot, which currently uses the ORF fallback until an AUGUSTUS/BRAKER-style backend is integrated.
 
 ## Running
 
