@@ -1,6 +1,6 @@
 # SequenceStudio by GOENOMICS
 
-A modern, cross-platform biological sequence analysis workbench for macOS built with Python and PySide6 (Qt6). All bioinformatics computation uses BioPython.
+A modern, cross-platform biological sequence analysis workbench built with Python and PySide6 (Qt6). All bioinformatics computation uses BioPython.
 
 ![SequenceStudio alignment view showing 69 hexokinase sequences with ClustalX colouring, consensus row and conservation bar](assets/example_alignment.png)
 
